@@ -4,7 +4,6 @@ import { hashPassword } from "app/auth/auth-utils"
 import { SignupInput, SignupInputType } from "app/auth/validations"
 
 export default async function signup(input: SignupInputType, { session }: Ctx) {
-  // This throws an error if input is invalid
   const { email, password } = SignupInput.parse(input)
 
   const hashedPassword = await hashPassword(password)

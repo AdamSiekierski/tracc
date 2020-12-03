@@ -4,9 +4,7 @@ import * as z from "zod"
 export { FORM_ERROR } from "final-form"
 
 type FormProps<S extends z.ZodType<any, any>> = {
-  /** All your form fields */
   children: ReactNode
-  /** Text to display in the submit button */
   submitText: string
   schema?: S
   onSubmit: FinalFormProps<z.infer<S>>["onSubmit"]
@@ -47,12 +45,6 @@ export function Form<S extends z.ZodType<any, any>>({
           <button type="submit" disabled={submitting}>
             {submitText}
           </button>
-
-          <style global jsx>{`
-            .form > * + * {
-              margin-top: 1rem;
-            }
-          `}</style>
         </form>
       )}
     />

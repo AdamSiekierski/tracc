@@ -1,5 +1,5 @@
 import React from "react"
-import { useMutation } from "blitz"
+import { useMutation, Link } from "blitz"
 import { LabeledTextField } from "app/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/components/Form"
 import signup from "app/auth/mutations/signup"
@@ -37,6 +37,10 @@ export const SignupForm = (props: SignupFormProps) => {
         <LabeledTextField name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
       </Form>
+
+      <div style={{ marginTop: "1rem" }}>
+        Or <Link href="/login">Log in</Link>
+      </div>
     </div>
   )
 }
