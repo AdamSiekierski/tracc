@@ -18,17 +18,22 @@ export const LabeledTextField = React.forwardRef<HTMLInputElement, LabeledTextFi
     const normalizedError = Array.isArray(error) ? error.join(", ") : error || submitError
 
     return (
-      <div {...outerProps}>
-        <label>
+      <div {...outerProps} className="mb-4">
+        <label className="text-sm text-gray-600">
           {label}
-          <input {...input} disabled={submitting} {...props} ref={ref} />
+          <input
+            {...input}
+            disabled={submitting}
+            {...props}
+            ref={ref}
+            className={`bg-white border border-gray-300 rounded-md py-2 px-4 block w-full appearance-none leading-normal transition-colors duration-500 my-1 ${
+              touched && normalizedError && "border-red-600"
+            }`}
+          />
         </label>
-
-        {touched && normalizedError && (
-          <div role="alert" style={{ color: "red" }}>
-            {normalizedError}
-          </div>
-        )}
+        <div role="alert" className="text-sm italic text-red-600">
+          {touched && normalizedError ? normalizedError : ""}
+        </div>
       </div>
     )
   }

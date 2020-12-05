@@ -1,5 +1,5 @@
-import { Link, BlitzPage, useMutation } from "blitz"
-import Layout from "app/layouts/Layout"
+import { BlitzPage, useMutation } from "blitz"
+import { getSessionContext } from "@blitzjs/server"
 import logout from "app/auth/mutations/logout"
 import { useCurrentUser } from "app/hooks/useCurrentUser"
 import { Suspense } from "react"
@@ -8,39 +8,22 @@ const UserInfo = () => {
   const currentUser = useCurrentUser()
   const [logoutMutation] = useMutation(logout)
 
-  if (currentUser) {
-    return (
-      <>
-        <button
-          onClick={async () => {
-            await logoutMutation()
-          }}
-        >
-          Logout
-        </button>
-        <div>
-          User id: <code>{currentUser.id}</code>
-          <br />
-          User role: <code>{currentUser.role}</code>
-        </div>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <Link href="/signup">
-          <a>
-            <strong>Sign Up</strong>
-          </a>
-        </Link>
-        <Link href="/login">
-          <a>
-            <strong>Login</strong>
-          </a>
-        </Link>
-      </>
-    )
-  }
+  return (
+    <>
+      <button
+        onClick={async () => {
+          await logoutMutation()
+        }}
+      >
+        Logout
+      </button>
+      <div>
+        User id: <code>{currentUser?.id}</code>
+        <br />
+        User role: <code>{currentUser?.role}</code>
+      </div>
+    </>
+  )
 }
 
 const Home: BlitzPage = () => {
@@ -51,6 +34,16 @@ const Home: BlitzPage = () => {
   )
 }
 
-Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
+export async function getServerSideProps({ req, res }) {
+  const session = await getSessionContext(req, res)
+
+  if (!session.userId) {
+    res.setHeader("location", "/login")
+    res.statusCode = 302
+    res.end()
+  }
+
+  return { props: {} }
+}
 
 export default Home
