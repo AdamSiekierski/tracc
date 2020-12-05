@@ -4,11 +4,11 @@ import { hashPassword } from "app/auth/auth-utils"
 import { SignupInput, SignupInputType } from "app/auth/validations"
 
 export default async function signup(input: SignupInputType, { session }: Ctx) {
-  const { email, password } = SignupInput.parse(input)
+  const { email, password, name } = SignupInput.parse(input)
 
   const hashedPassword = await hashPassword(password)
   const user = await db.user.create({
-    data: { email: email.toLowerCase(), hashedPassword, role: "user" },
+    data: { email: email.toLowerCase(), hashedPassword, role: "user", name },
     select: { id: true, name: true, email: true, role: true },
   })
 
