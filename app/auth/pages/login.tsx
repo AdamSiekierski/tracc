@@ -12,7 +12,7 @@ const LoginPage: BlitzPage = () => {
       <p className="mt-6 text-gray-600">
         Don't have an account? Sign up{" "}
         <Link href="/signup">
-          <a className="text-green-500 underline">here</a>
+          <a className="text-purple-500 underline">here</a>
         </Link>
       </p>
     </>

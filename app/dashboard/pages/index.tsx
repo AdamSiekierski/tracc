@@ -4,6 +4,7 @@ import { getSessionContext } from "@blitzjs/server"
 import logout from "app/auth/mutations/logout"
 import remove from "app/auth/mutations/remove"
 import { useCurrentUser } from "app/hooks/useCurrentUser"
+import DashboardLayout from "../layouts/dashboardLayout"
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
@@ -58,5 +59,7 @@ export async function getServerSideProps({ req, res }) {
 
   return { props: {} }
 }
+
+Home.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>
 
 export default Home
