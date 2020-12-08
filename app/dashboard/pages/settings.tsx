@@ -1,5 +1,5 @@
-import DashboardLayout from "app/dashboard/layouts/dashboardLayout"
 import React from "react"
+import DashboardLayout from "app/dashboard/layouts/DashboardLayout"
 
 const Settings = () => <div>settings</div>
 
