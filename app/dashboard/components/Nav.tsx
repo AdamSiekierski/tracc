@@ -1,6 +1,6 @@
 import React from "react"
 import NavLink from "./NavLink"
-import { HomeIcon, StatsIcon } from "app/components/icons"
+import { HomeIcon, SettingsIcon, StatsIcon } from "app/components/icons"
 
 const Nav = () => {
   return (
@@ -9,8 +9,11 @@ const Nav = () => {
       <NavLink to="/" icon={HomeIcon}>
         Dashboard
       </NavLink>
-      <NavLink to="/" icon={StatsIcon}>
+      <NavLink to="/stats" icon={StatsIcon}>
         Stats
+      </NavLink>
+      <NavLink to="/settings" icon={SettingsIcon}>
+        Settings
       </NavLink>
     </nav>
   )

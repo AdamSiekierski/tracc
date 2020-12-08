@@ -11,7 +11,7 @@ const SignupPage: BlitzPage = () => {
       <SignupForm onSuccess={() => router.push("/")} />
       <p className="mt-6 text-gray-600">
         Already have an account? Log in{" "}
-        <Link href="/login">
+        <Link href="/login" passHref>
           <a className="text-purple-500 underline">here</a>
         </Link>
       </p>
