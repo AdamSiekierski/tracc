@@ -1,36 +1,40 @@
 import { IconType } from "app/components/icons"
-import { fireEvent, mockRouter, render } from "test/utils"
-import { act } from "react-dom/test-utils"
+import { cleanup, fireEvent, mockRouter, render } from "test/utils"
+import { act } from "@testing-library/react"
 import Link from "../Link"
 
 describe("nav/Link", () => {
   const IconMock: IconType = () => <svg data-testid="icon-svg"></svg>
   const linkText = "hello world"
 
-  test("renders given text and icon", () => {
-    const { getByTestId } = render(
+  let wrapper: ReturnType<typeof render>
+
+  beforeEach(() => {
+    wrapper = render(
       <Link icon={IconMock} to="/path">
         {linkText}
       </Link>
     )
+  })
+
+  afterEach(cleanup)
+
+  it("renders given text and icon", () => {
+    const { getByTestId } = wrapper
 
     expect(getByTestId("link-text")).toBeInTheDocument()
     expect(getByTestId("link-text")).toHaveTextContent(linkText)
     expect(getByTestId("icon-svg")).toBeInTheDocument()
   })
 
-  test("redirects to given path", () => {
-    const { getByTestId } = render(
-      <Link icon={IconMock} to="/path">
-        {linkText}
-      </Link>
-    )
+  it("passes proper url to link", () => {
+    const { getByTestId } = wrapper
 
     act(() => {
       fireEvent.click(getByTestId("link-wrapper"))
     })
 
     expect(mockRouter.push).toHaveBeenCalledTimes(1)
-    expect(mockRouter.push).toHaveBeenCalledWith("/path", expect.anything(), expect.anything())
+    expect(mockRouter.push).toHaveBeenCalledWith("/path")
   })
 })
