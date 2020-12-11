@@ -5,12 +5,15 @@ import ProfileMenu from "./ProfileMenu"
 
 const NavProfile = () => {
   const [showMenu, setShowMenu] = useState(false)
-  const menuRef = useRef(null)
+  const menuRef = useRef<HTMLDivElement>(null)
   const user = useUser()
 
   useEffect(() => {
     function hideListener(e: MouseEvent) {
-      if (e.target !== menuRef.current && showMenu) {
+      const menu = menuRef.current
+      const target = e.target as Element
+
+      if (showMenu && !(menu?.contains(target) || target === menu)) {
         setShowMenu(false)
       }
     }
@@ -24,7 +27,7 @@ const NavProfile = () => {
 
   return (
     <button
-      className={`p-2 flex items-center relative text-left appearance-none transition-all group focus:outline-none ${
+      className={`p-2 flex items-center relative text-left appearance-none transition-all group outline-none focus:outline-none ${
         showMenu
           ? "bg-gray-100 text-black rounded-b-lg"
           : "bg-transparent hover:bg-purple-700 rounded-lg"
@@ -40,9 +43,7 @@ const NavProfile = () => {
         <h3 className="font-bold">{user?.name}</h3>
         <p className="text-sm">{user?.email}</p>
       </div>
-      <div
-        className={`${!showMenu && "text-transparent group-hover:text-white"} transition-colors`}
-      >
+      <div className={`${!showMenu && "text-transparent group-hover:text-white"}`}>
         <UpIcon className={`w-8 transform transition-transform ${showMenu && "rotate-180"}`} />
       </div>
       <ProfileMenu ref={menuRef} show={showMenu} />
