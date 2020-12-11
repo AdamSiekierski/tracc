@@ -17,9 +17,12 @@ const NavLink = ({ children, icon: Icon, to }: NavLinkProps) => {
         className={`flex items-center p-2 rounded-lg my-1 transition-colors duration-200 ${
           router.pathname === to && "bg-purple-700"
         }  hover:bg-purple-700`}
+        data-testid="link-wrapper"
       >
         <Icon className="w-8 text-purple-500" />
-        <p className="ml-3">{children}</p>
+        <p className="ml-3" data-testid="link-text">
+          {children}
+        </p>
       </a>
     </Link>
   )

@@ -1,8 +1,6 @@
 import React from "react"
 
-export type IconProps = {
-  className?: string
-}
+export type IconProps = React.DetailedHTMLProps<React.HTMLAttributes<SVGSVGElement>, SVGSVGElement>
 
 export type IconType = React.FC<IconProps>
 

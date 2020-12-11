@@ -70,11 +70,11 @@ export const mockRouter: BlitzRouter = {
   asPath: "/",
   params: {},
   query: {},
-  push: jest.fn(),
+  push: jest.fn(() => Promise.resolve(true)),
   replace: jest.fn(),
   reload: jest.fn(),
   back: jest.fn(),
-  prefetch: jest.fn(),
+  prefetch: jest.fn(() => Promise.reject(true)),
   beforePopState: jest.fn(),
   events: {
     on: jest.fn(),
