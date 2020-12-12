@@ -26,13 +26,16 @@ const NavProfile = () => {
   })
 
   return (
-    <button
-      className={`p-2 flex items-center relative text-left appearance-none transition-all group outline-none focus:outline-none ${
+    <div
+      className={`p-2 flex items-center relative text-left transition-all group outline-none focus:outline-none ${
         showMenu
           ? "bg-gray-100 text-black rounded-b-lg"
           : "bg-transparent hover:bg-purple-700 rounded-lg"
       }`}
       onClick={() => !showMenu && setShowMenu(true)}
+      tabIndex={0}
+      role="button"
+      onKeyUp={(e) => !(e.target === menuRef.current) && setShowMenu(!menuRef)}
     >
       <img
         src={`https://www.gravatar.com/avatar/${user?.emailHash}?d=mp`}
@@ -47,7 +50,7 @@ const NavProfile = () => {
         <UpIcon className={`w-8 transform transition-transform ${showMenu && "rotate-180"}`} />
       </div>
       <ProfileMenu ref={menuRef} show={showMenu} />
-    </button>
+    </div>
   )
 }
 
