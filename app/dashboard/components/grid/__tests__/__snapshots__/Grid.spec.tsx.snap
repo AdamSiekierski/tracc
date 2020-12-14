@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`grid/Grid respects the max number of columns 1`] = `
+<DocumentFragment>
+  <section
+    class="grid grid-cols-1 gap-4 h-full"
+  >
+    <div
+      data-testid="mock-component"
+    />
+    <div
+      data-testid="mock-component"
+    />
+  </section>
+</DocumentFragment>
+`;

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react"
 import { UpIcon } from "app/components/icons"
 import { useUser } from "../providers/UserProvider"
 import ProfileMenu from "./ProfileMenu"
-import { show } from "cli-cursor"
 
 const NavProfile = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -37,6 +36,7 @@ const NavProfile = () => {
             : "bg-transparent hover:bg-purple-700 rounded-lg focus:bg-purple-700"
         }`}
         onClick={() => setShowMenu(!showMenu)}
+        ref={buttonRef}
       >
         <img
           src={`https://www.gravatar.com/avatar/${user?.emailHash}?d=mp`}

@@ -8,7 +8,7 @@ const DashboardLayout: React.FC = ({ children }) => {
       <UserProvider>
         <div className="h-screen flex bg-gray-100">
           <Nav />
-          <div className="flex-1 height-full p-4">{children}</div>
+          <div className="flex-1 height-full p-6">{children}</div>
         </div>
       </UserProvider>
     </Suspense>

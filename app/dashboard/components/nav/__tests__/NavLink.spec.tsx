@@ -1,7 +1,7 @@
 import { IconType } from "app/components/icons"
 import { cleanup, fireEvent, mockRouter, render } from "test/utils"
 import { act } from "@testing-library/react"
-import Link from "../Link"
+import Link from "../NavLink"
 
 describe("nav/Link", () => {
   const IconMock: IconType = () => <svg data-testid="icon-svg" />

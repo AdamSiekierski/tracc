@@ -1,6 +1,6 @@
 import React from "react"
-import NavLink from "./Link"
-import { CashIcon, HomeIcon, SettingsIcon, StatsIcon } from "app/components/icons"
+import NavLink from "./NavLink"
+import { CashIcon, HomeIcon, StatsIcon } from "app/components/icons"
 import NavProfile from "./Profile"
 
 const Nav = () => {
