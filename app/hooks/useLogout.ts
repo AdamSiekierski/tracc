@@ -1,5 +1,5 @@
 import { useMutation, useRouter } from "blitz"
-import logout from "../mutations/logout"
+import logout from "../users/mutations/logout"
 
 export function useLogout() {
   const [logoutMutation] = useMutation(logout)

@@ -4,7 +4,7 @@ import { act } from "@testing-library/react"
 import Link from "../Link"
 
 describe("nav/Link", () => {
-  const IconMock: IconType = () => <svg data-testid="icon-svg"></svg>
+  const IconMock: IconType = () => <svg data-testid="icon-svg" />
   const linkText = "hello world"
 
   let wrapper: ReturnType<typeof render>

@@ -1,7 +1,8 @@
 import React from "react"
-import DashboardLayout from "app/dashboard/layouts/DashboardLayout"
+import { BlitzPage } from "blitz"
+import DashboardLayout from "../layouts/DashboardLayout"
 
-const Settings = () => <div>settings</div>
+const Settings: BlitzPage = () => <div>setings</div>
 
 Settings.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>
 

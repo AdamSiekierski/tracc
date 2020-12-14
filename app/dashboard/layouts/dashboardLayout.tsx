@@ -6,7 +6,7 @@ const DashboardLayout: React.FC = ({ children }) => {
   return (
     <Suspense fallback="Loading...">
       <UserProvider>
-        <div className="h-screen flex bg-gray-50">
+        <div className="h-screen flex bg-gray-100">
           <Nav />
           <div className="flex-1 height-full p-4">{children}</div>
         </div>
