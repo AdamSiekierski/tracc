@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders properly 1`] = `
+<DocumentFragment>
+  <button
+    class="block rounded-md px-4 py-2 text-gray-600 transition-colors duration-300 bg-gray-200 hover:bg-gray-300"
+    data-testid="button"
+  >
+    hello world
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button shows the icon if passed 1`] = `
+<DocumentFragment>
+  <button
+    class="block rounded-md px-4 py-2 text-gray-600 transition-colors duration-300 bg-gray-200 hover:bg-gray-300"
+  >
+    <div
+      class="w-8 text-gray-300"
+      data-testid="mock-icon"
+    >
+      icon
+    </div>
+    hello world
+  </button>
+</DocumentFragment>
+`;

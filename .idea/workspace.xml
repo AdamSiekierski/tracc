@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4678002a-eb1a-4c8c-ab12-8dd216f11631" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dashboard/components/grid/__tests__/Grid.spec.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dashboard/components/table/Table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/parseTableData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/parseTableKeys.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/parseTableValues.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/grid/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/grid/Grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/Link.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/NavLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/Nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/Nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/__test__/Link.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/__tests__/NavLink.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/layouts/dashboardLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/layouts/dashboardLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/components/grid/__tests__/__snapshots__/Grid.spec.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/grid/__tests__/__snapshots__/Grid.spec.tsx.snap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/pages/transactions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/pages/transactions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/__test__/Button.spec.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +97,8 @@
       <workItem from="1607800639715" duration="1649000" />
       <workItem from="1607868452619" duration="2885000" />
       <workItem from="1607944437012" duration="587000" />
-      <workItem from="1607962180912" duration="4652000" />
+      <workItem from="1607962180912" duration="7199000" />
+      <workItem from="1608022387772" duration="2192000" />
     </task>
     <servers />
   </component>
