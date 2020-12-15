@@ -5,7 +5,7 @@ type CardProps = {
 }
 
 const Card = ({ children }: CardProps) => (
-  <div className="rounded-xl shadow-md bg-gray-50 overflow-y-auto">{children}</div>
+  <div className="rounded-xl shadow-md bg-gray-50 overflow-auto">{children}</div>
 )
 
 export default Card

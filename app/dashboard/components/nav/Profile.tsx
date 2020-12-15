@@ -33,7 +33,7 @@ const NavProfile = () => {
         className={`p-2 flex w-full items-center relative text-left transition-all group outline-none focus:outline-none ${
           showMenu
             ? "bg-gray-100 text-black rounded-b-lg"
-            : "bg-transparent hover:bg-purple-700 rounded-lg focus:bg-purple-700"
+            : "bg-transparent hover:bg-purple-700 rounded-lg"
         }`}
         onClick={() => setShowMenu(!showMenu)}
         ref={buttonRef}
@@ -47,7 +47,9 @@ const NavProfile = () => {
           <h3 className="font-bold">{user?.name}</h3>
           <p className="text-sm">{user?.email}</p>
         </div>
-        <div className={`${!showMenu && "text-transparent group-hover:text-white"}`}>
+        <div
+          className={`transition-colors ${!showMenu && "text-transparent group-hover:text-white"}`}
+        >
           <UpIcon className={`w-8 transform transition-transform ${showMenu && "rotate-180"}`} />
         </div>
       </button>
