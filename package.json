@@ -31,10 +31,10 @@
     ]
   },
   "dependencies": {
-    "@prisma/cli": "2.12.1",
     "@prisma/client": "2.12.1",
     "blitz": "0.26.0",
     "final-form": "4.20.1",
+    "framer-motion": "3.1.1",
     "react": "0.0.0-experimental-4ead6b530",
     "react-dom": "0.0.0-experimental-4ead6b530",
     "react-error-boundary": "2.3.2",
@@ -45,11 +45,13 @@
     "zod": "1.11.10"
   },
   "devDependencies": {
+    "@prisma/cli": "2.12.1",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/react-hooks": "3.4.2",
     "@types/jest": "26.0.15",
     "@types/react": "16.14.2",
+    "@types/react-dom": "17.0.0",
     "@types/secure-password": "3.1.0",
     "@typescript-eslint/eslint-plugin": "4.8.2",
     "@typescript-eslint/parser": "4.8.2",

@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4678002a-eb1a-4c8c-ab12-8dd216f11631" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/transactions/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/override.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/unCamel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/modal/Modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dashboard/components/AddTransactionForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/transactions/mutations/addTransaction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/transactions/queries/getTransactions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/isServer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/auth/mutations/remove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/mutations/remove.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/grid/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/grid/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/Nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/Nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/table/Table.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/pages/transactions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/pages/transactions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/parseTableData.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/parseTableValues.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/migrate.lock" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/migrate.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="discord-application" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -103,7 +105,20 @@
       <workItem from="1607962180912" duration="7199000" />
       <workItem from="1608022387772" duration="2282000" />
       <workItem from="1608046572406" duration="51000" />
-      <workItem from="1608046644076" duration="6046000" />
+      <workItem from="1608046644076" duration="6133000" />
+      <workItem from="1608136684795" duration="1196000" />
+      <workItem from="1608144077080" duration="1736000" />
+      <workItem from="1608148489766" duration="480000" />
+      <workItem from="1608195714043" duration="920000" />
+      <workItem from="1608204840271" duration="157000" />
+      <workItem from="1608280937248" duration="940000" />
+      <workItem from="1608399323396" duration="67000" />
+      <workItem from="1608399414642" duration="1251000" />
+      <workItem from="1608535874964" duration="717000" />
+      <workItem from="1608720086779" duration="809000" />
+      <workItem from="1608725073716" duration="4588000" />
+      <workItem from="1608892687143" duration="84000" />
+      <workItem from="1608892831984" duration="702000" />
     </task>
     <servers />
   </component>

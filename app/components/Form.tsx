@@ -1,6 +1,7 @@
 import React, { ReactNode, PropsWithoutRef } from "react"
 import { Form as FinalForm, FormProps as FinalFormProps } from "react-final-form"
 import * as z from "zod"
+import Button from "./Button"
 export { FORM_ERROR } from "final-form"
 
 type FormProps<S extends z.ZodType<any, any>> = {
@@ -39,13 +40,13 @@ export function Form<S extends z.ZodType<any, any>>({
               {submitError}
             </div>
           )}
-          <button
+          <Button
             type="submit"
             disabled={submitting}
             className="block rounded-md px-4 py-2 mx-auto mt-1 text-gray-600 bg-gray-200 hover:bg-gray-300 transition-colors duration-300"
           >
             {submitText}
-          </button>
+          </Button>
         </form>
       )}
     />

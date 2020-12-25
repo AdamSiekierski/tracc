@@ -1,11 +1,11 @@
-import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react"
+import React, { ReactNode } from "react"
 import { IconType } from "./icons"
 
 type ButtonProps = {
   children?: ReactNode
   variant?: "full" | "outlined"
   icon?: IconType
-} & DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+} & JSX.IntrinsicElements["button"]
 
 const Button = ({ children, variant, icon: Icon, ...props }: ButtonProps) => {
   let style: string

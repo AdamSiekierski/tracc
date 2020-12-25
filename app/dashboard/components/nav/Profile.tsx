@@ -1,31 +1,11 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useState } from "react"
 import { UpIcon } from "app/components/icons"
 import { useUser } from "../providers/UserProvider"
 import ProfileMenu from "./ProfileMenu"
 
 const NavProfile = () => {
   const [showMenu, setShowMenu] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
   const user = useUser()
-
-  useEffect(() => {
-    function hideListener(e: MouseEvent) {
-      const menu = menuRef.current
-      const button = menuRef.current
-      const target = e.target as Element
-
-      if (showMenu && target !== menu && target !== button) {
-        setShowMenu(false)
-      }
-    }
-
-    document.addEventListener("click", hideListener)
-
-    return () => {
-      document.removeEventListener("click", hideListener)
-    }
-  })
 
   return (
     <div className={`relative`}>
@@ -36,7 +16,6 @@ const NavProfile = () => {
             : "bg-transparent hover:bg-purple-700 rounded-lg"
         }`}
         onClick={() => setShowMenu(!showMenu)}
-        ref={buttonRef}
       >
         <img
           src={`https://www.gravatar.com/avatar/${user?.emailHash}?d=mp`}
@@ -53,7 +32,7 @@ const NavProfile = () => {
           <UpIcon className={`w-8 transform transition-transform ${showMenu && "rotate-180"}`} />
         </div>
       </button>
-      <ProfileMenu ref={menuRef} show={showMenu} />
+      <ProfileMenu show={showMenu} />
     </div>
   )
 }
