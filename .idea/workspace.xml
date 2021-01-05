@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4678002a-eb1a-4c8c-ab12-8dd216f11631" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/modal/Modal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dashboard/components/AddTransactionForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/transactions/mutations/addTransaction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/transactions/queries/getTransactions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/isServer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth/mutations/remove.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/mutations/remove.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/components/nav/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/components/nav/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/pages/transactions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/pages/transactions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/migrate.lock" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/migrate.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +105,8 @@
       <workItem from="1608720086779" duration="809000" />
       <workItem from="1608725073716" duration="4588000" />
       <workItem from="1608892687143" duration="84000" />
-      <workItem from="1608892831984" duration="702000" />
+      <workItem from="1608892831984" duration="1273000" />
+      <workItem from="1608910782123" duration="1080000" />
     </task>
     <servers />
   </component>

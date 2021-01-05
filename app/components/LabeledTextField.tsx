@@ -5,38 +5,46 @@ export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElem
   name: string
   label: string
   type?: "text" | "password" | "email" | "number"
+  rows?: number
   outerProps?: PropsWithoutRef<JSX.IntrinsicElements["div"]>
 }
 
-export const LabeledTextField = React.forwardRef<HTMLInputElement, LabeledTextFieldProps>(
-  ({ name, label, outerProps, ...props }, ref) => {
-    const {
-      input,
-      meta: { touched, error, submitError, submitting },
-    } = useField(name)
+export const LabeledTextField = React.forwardRef<
+  HTMLInputElement | HTMLTextAreaElement,
+  LabeledTextFieldProps
+>(({ name, label, outerProps, type, rows, ...props }, ref) => {
+  const Input = rows
+    ? ("textarea" as keyof JSX.IntrinsicElements)
+    : ("input" as keyof JSX.IntrinsicElements)
 
-    const normalizedError = Array.isArray(error) ? error.join(", ") : error || submitError
+  const {
+    input,
+    meta: { touched, error, submitError, submitting },
+  } = useField(name, { parse: (val) => (type === "number" ? Number(val) || "" : val) })
 
-    return (
-      <div {...outerProps} className="mb-4">
-        <label className="text-sm text-gray-600">
-          {label}
-          <input
-            {...input}
-            disabled={submitting}
-            {...props}
-            ref={ref}
-            className={`bg-white border border-gray-300 rounded-md py-2 px-4 block w-full appearance-none leading-normal transition-colors duration-500 my-1 ${
-              touched && normalizedError && "border-red-600"
-            }`}
-          />
-        </label>
-        <div role="alert" className="text-sm italic text-red-600">
-          {touched && normalizedError ? normalizedError : ""}
-        </div>
+  const normalizedError = Array.isArray(error) ? error.join(", ") : error || submitError
+
+  return (
+    <div {...outerProps} className="mb-2">
+      <label className="text-sm text-gray-600">
+        {label}
+        <Input
+          {...input}
+          disabled={submitting}
+          rows={rows}
+          type={type}
+          {...props}
+          ref={ref}
+          className={`bg-white border border-gray-300 rounded-md py-2 px-4 block w-full appearance-none leading-normal transition-colors duration-500 my-1 resize-none ${
+            touched && normalizedError && "border-red-600"
+          }`}
+        />
+      </label>
+      <div role="alert" className="text-sm italic text-red-600">
+        {touched && normalizedError ? normalizedError : ""}
       </div>
-    )
-  }
-)
+    </div>
+  )
+})
 
 export default LabeledTextField

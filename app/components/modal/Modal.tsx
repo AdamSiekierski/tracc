@@ -44,6 +44,8 @@ const Modal = ({ buttons, children, show, onHide }: ModalProps) => {
             <div
               className="bg-gray-50 px-16 py-10 rounded-xl text-center max-w-md w-full"
               ref={modalRef}
+              role="dialog"
+              aria-modal="true"
             >
               {children}
             </div>

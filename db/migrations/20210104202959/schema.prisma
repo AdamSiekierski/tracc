@@ -1,6 +1,6 @@
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -35,7 +35,7 @@ model Session {
 }
 
 model Transaction {
-  id          String   @id @default(uuid())
+  id          Int      @id @default(autoincrement())
   createdAt   DateTime @default(now())
   value       Float
   name        String
