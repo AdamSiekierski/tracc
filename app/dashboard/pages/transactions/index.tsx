@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { BlitzPage, useQuery } from "blitz"
-import DashboardLayout from "../layouts/DashboardLayout"
-import Grid from "../components/grid/Grid"
-import Card from "../components/grid/Card"
-import Button from "../../components/Button"
-import Table from "../components/table/Table"
-import Modal from "../../components/modal/Modal"
-import AddTransactionForm from "../components/AddTransactionForm"
+import DashboardLayout from "../../layouts/DashboardLayout"
+import Grid from "../../components/grid/Grid"
+import Card from "../../components/grid/Card"
+import Button from "../../../components/Button"
+import Table from "../../components/table/Table"
+import Modal from "../../../components/modal/Modal"
+import AddTransactionForm from "../../components/AddTransactionForm"
 import getTransactions from "app/transactions/queries/getTransactions"
 
 const Transactions: BlitzPage = () => {
@@ -32,7 +32,11 @@ const Transactions: BlitzPage = () => {
               ...transaction,
               createdAt: transaction.createdAt.toString(),
             }))}
-            keys={{ name: "Transaction name", value: "Value", description: "Description" }}
+            columns={[
+              { Header: "name", accessor: "name" },
+              { Header: "value", accessor: "value" },
+              { Header: "Created at", accessor: "createdAt" },
+            ]}
           />
         </Card>
       </Grid>

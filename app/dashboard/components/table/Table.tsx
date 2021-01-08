@@ -1,30 +1,42 @@
-type TableProps<T> = {
+import { Column, useTable } from "react-table"
+
+type TableProps<T extends object> = {
   data: T[]
-  keys: Partial<Record<keyof T, string>>
+  columns: Column<T>[]
 }
 
-const Table = <T extends object>({ data, keys }: TableProps<T>) => {
+const Table = <T extends object>({ data, columns }: TableProps<T>) => {
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
+    data,
+    columns,
+  })
+
   return (
-    <table className="table-auto w-full">
+    <table className="table-auto w-full" {...getTableProps()}>
       <thead>
-        <tr className="border-t border-b border-gray-200">
-          {Object.values(keys).map((name: string) => (
-            <th className="p-2 text-gray-500 font-normal" key={name}>
-              {name}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, i) => (
-          <tr key={i + row.toString()} className="border-b border-gray-200 hover:bg-gray-100">
-            {Object.keys(keys).map((key) => (
-              <td className="p-4 text-gray-700" key={key + row.toString()}>
-                {row[key]}
-              </td>
+        {headerGroups.map((headerGroup) => (
+          <tr className="border-t border-b border-gray-200" {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th className="p-2 text-gray-500 font-normal" {...column.getHeaderProps()}>
+                {column.render("Header")}
+              </th>
             ))}
           </tr>
         ))}
+      </thead>
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row) => {
+          prepareRow(row)
+          return (
+            <tr className="border-b border-gray-200 hover:bg-gray-100" {...row.getRowProps()}>
+              {row.cells.map((cell) => (
+                <td className="p-4 text-gray-700" {...cell.getCellProps()}>
+                  {cell.render("Cell")}
+                </td>
+              ))}
+            </tr>
+          )
+        })}
       </tbody>
     </table>
   )
